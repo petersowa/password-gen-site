@@ -1,14 +1,14 @@
 {
   "name": "PW-GenApp",
   "description": "",
-  "homepage": "https://stackblitz.com/edit/react-lqqur1",
+  "homepage": "https://pwgen.upiotra.com",
   "dependencies": {
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
-    "react-scripts": "^1.0.10",
-    "react-router-dom": "^4.2.2"
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "^1.1.4"
   },
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
