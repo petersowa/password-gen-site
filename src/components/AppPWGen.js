@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import { Box, BoxNav } from './Box'
 import '../style.css';
 import { EFFwords } from '../words.js'

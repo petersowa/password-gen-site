@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch, Link, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import { Box, BoxNav } from './Box'
 import { AppPWGen } from './AppPWGen.js'
 import { AppHashPW } from './AppHashPW.js'
