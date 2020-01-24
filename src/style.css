@@ -1,119 +1,120 @@
-h1, p {
-  font-family: Lato;
+h1,
+p {
+	font-family: Lato;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .box {
-  --bgcolor: #cba;
+	--bgcolor: #cba;
 }
 
 .border {
-  border: 3px solid peru;
+	border: 3px solid peru;
 }
 
 .box {
-  background-color: var(--bgcolor);
-  padding: 5px;
-  margin: auto;
-  box-sizing: border-box;
-  white-space: normal; 
-  overflow: auto;
-  text-overflow: ellipsis;
-  filter: saturate(80%);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: 1px solid whitesmoke;
+	background-color: var(--bgcolor);
+	padding: 5px;
+	margin: auto;
+	box-sizing: border-box;
+	white-space: normal;
+	overflow: auto;
+	text-overflow: ellipsis;
+	filter: saturate(80%);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border: 1px solid whitesmoke;
 }
 
 .route-link {
-  background-color: var(--bgcolor);
-  color: black;
-  padding: 5px;
-  margin: auto;
-  box-sizing: border-box;
-  white-space: normal; 
-  overflow: auto;
-  text-overflow: ellipsis;
-  text-decoration: none;
-  filter: saturate(80%);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: 1px solid whitesmoke;
+	background-color: var(--bgcolor);
+	color: black;
+	padding: 5px;
+	margin: auto;
+	box-sizing: border-box;
+	white-space: normal;
+	overflow: auto;
+	text-overflow: ellipsis;
+	text-decoration: none;
+	filter: saturate(80%);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border: 1px solid whitesmoke;
 }
 
 div.box:active {
-  filter: saturate(100%) brightness(120%);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
+	filter: saturate(100%) brightness(120%);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
 }
 
 button.box {
-  filter: brightness(150%);
-  display: inline-block;
-  padding: 10px;
-  margin: auto;
-  box-sizing: border-box;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 3px;
+	filter: brightness(150%);
+	display: inline-block;
+	padding: 10px;
+	margin: auto;
+	box-sizing: border-box;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 3px;
 }
 
 div.clear {
-  clear: both;
+	clear: both;
 }
 
 .box:hover {
-  filter: saturate(100%) brightness(110%);
+	filter: saturate(100%) brightness(110%);
 }
 
 .box-nav {
-  float: left;
-  height: 40px;
-  border: 0px solid peru;
-  padding: 10px;
-  margin: auto;
-  box-sizing: border-box;
+	float: left;
+	height: 40px;
+	border: 0px solid peru;
+	padding: 10px;
+	margin: auto;
+	box-sizing: border-box;
 }
 
 .box-nav:hover {
-  filter: saturate(100%) brightness(110%);
+	filter: saturate(100%) brightness(110%);
 }
 
 .center {
-  margin: auto;
-  width: 50%;
-  border: 3px solid green;
-  padding: 10px;
+	margin: auto;
+	width: 50%;
+	border: 3px solid green;
+	padding: 10px;
 }
 
 .content {
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  margin: auto;
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	margin: auto;
 }
 
 .fade-in {
-  opacity: 1.0;
-  transition-property:  opacity;
-  transition-duration: .1s;
-  overflow: clip;
+	opacity: 1;
+	transition-property: opacity;
+	transition-duration: 0.1s;
+	overflow: clip;
 }
 
 .fade-out {
-  opacity: 0;
-  transition-property:  opacity;
-  transition-duration: .2s;
-  overflow: clip;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	overflow: clip;
 }
 
 .data-content {
-  float: left;
-  width: 23%;
-  margin: 1%;
-  background-color:dodgerblue;
+	float: left;
+	width: 23%;
+	margin: 1%;
+	background-color: dodgerblue;
 }
 
 div.float {
-  float: left;
+	float: left;
 }
