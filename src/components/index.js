@@ -1,3 +1,3 @@
-import { Box, BoxNav } from './Box'
+import { Box, BoxNav } from './Box';
 
-export { Box, BoxNav }
+export { Box, BoxNav };
