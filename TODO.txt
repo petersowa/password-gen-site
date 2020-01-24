@@ -1,0 +1,4 @@
+update README.md file
+redo UI
+	allow form control
+	blank-out typed phrase
