@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
-import { Box, BoxNav } from './Box';
+
 import '../style.css';
 import { EFFwords } from '../words.js';
+
+const PasswordList = props => {
+	return (
+		<ul className="app__password-list">
+			{props.children.map(pw => (
+				<li className="app__password-list__item">{pw}</li>
+			))}
+		</ul>
+	);
+};
 
 export class AppPWGen extends Component {
 	KeyChars = {
@@ -57,75 +67,27 @@ export class AppPWGen extends Component {
 		const classSlide = this.state.showList ? 'fade-in' : 'fade-out';
 		return (
 			<div>
-				<Box
-					bg="transparent"
-					{...Box.float('100%', '100%', 'none', 'auto')}
-				>
-					<BoxNav
-						bg="grey"
-						fg="lightgrey"
-						{...Box.style({
-							margin: 0,
-							padding: 10,
-							borderStyle: 'none',
-						})}
-						onClick={this.onNewPassword}
+				<button onClick={this.onNewPassword}>New Passwords</button>
+				<section>
+					<button
+						onClick={e =>
+							this.setState({ length: this.state.length - 1 })
+						}
 					>
-						Password Generate App
-					</BoxNav>
-					<BoxNav
-						bg="grey"
-						fg="lightgrey"
-						{...Box.style({
-							margin: 0,
-							padding: 10,
-							borderStyle: 'none',
-							float: 'right',
-						})}
+						-
+					</button>
+					{` ${this.state.length} `}
+					<button
+						onClick={e =>
+							this.setState({ length: this.state.length + 1 })
+						}
 					>
-						<button
-							onClick={e =>
-								this.setState({ length: this.state.length - 1 })
-							}
-						>
-							-
-						</button>
-						{` ${this.state.length} `}
-						<button
-							onClick={e =>
-								this.setState({ length: this.state.length + 1 })
-							}
-						>
-							+
-						</button>
-					</BoxNav>
-					<Box.ClearDiv />
-				</Box>
-
-				<Box.NavDiv bg={navBgColor} loc="bottom">
-					<BoxNav bg="lightgray" {...Box.style({ marginRight: 1 })}>
-						<button onClick={this.onNewPassword}>
-							New Password
-						</button>
-					</BoxNav>
-				</Box.NavDiv>
+						+
+					</button>
+				</section>
 
 				<div className={classSlide}>
-					<Box
-						bg="#fff"
-						{...Box.style({ margin: '10px auto', width: '24rem' })}
-					>
-						<Box
-							bg="silver"
-							{...Box.style({
-								textAlign: 'center',
-								border: 'none',
-								fontSize: '1.5rem',
-								fontFamily,
-							})}
-							data={this.state.password}
-						/>
-					</Box>
+					<PasswordList>{this.state.password}</PasswordList>
 				</div>
 			</div>
 		);
