@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
-import { Box, BoxNav } from './Box';
 import '../style.css';
 import { EFFwords } from '../words.js';
 
+const PasswordList = props => {
+	console.log(props);
+	return (
+		<ul className="app__password-list">
+			{props.children.map(pw => (
+				<li key={pw} className="app__password-list__item">
+					{pw}
+				</li>
+			))}
+		</ul>
+	);
+};
 export class AppHashPW extends Component {
 	KeyChars = {
 		standard1:
@@ -21,9 +32,11 @@ export class AppHashPW extends Component {
 		password: [],
 		length: 8,
 		count: 0,
+		showList: false,
 	};
 
 	makePassword = term => {
+		this.setState({ showList: false });
 		const password = new Array(this.state.length).fill(' ');
 		//let newpw = new Uint16Array(password.length)
 		//window.crypto.getRandomValues(newpw)
@@ -41,85 +54,62 @@ export class AppHashPW extends Component {
 							.join(joinChar)
 					);
 				});
-				this.setState({ password: pw, count: this.state.count + 1 });
+				this.setState({
+					password: pw,
+					count: this.state.count + 1,
+					showList: true,
+				});
+				console.log(pw);
 			});
 	};
 
 	onNewPassword = evt => {
+		evt.preventDefault();
 		this.makePassword(this.state.term);
 	};
 
 	updateTerm = evt => {
-		this.setState({ term: evt.target.value });
+		this.setState({
+			term: evt.target.value,
+		});
 	};
 
 	render() {
-		const navBgColor = 'hsla(50,0%,64%,.5)';
-		const fontFamily =
-			'Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace';
+		const classSlide = this.state.showList ? 'fade-in' : 'fade-out';
 		return (
-			<div>
-				<Box
-					bg="transparent"
-					{...Box.float('100%', '100%', 'none', 'auto')}
-				>
-					<BoxNav
-						bg="grey"
-						fg="lightgrey"
-						{...Box.style({
-							margin: 0,
-							padding: 10,
-							borderStyle: 'none',
-						})}
-						onClick={this.onNewPassword}
-					>
-						Password Generate App
-					</BoxNav>
-					<BoxNav
-						bg="grey"
-						fg="lightgrey"
-						{...Box.style({
-							margin: 0,
-							padding: 10,
-							borderStyle: 'none',
-							float: 'right',
-						})}
-					>
-						<input
-							placeholder=""
-							value={this.state.term}
-							onChange={this.updateTerm}
-						/>
-					</BoxNav>
-					<Box.ClearDiv />
-				</Box>
+			<>
+				<form className="control-group" onSubmit={this.onNewPassword}>
+					<button type="submit">Hash Password</button>
 
-				<Box.NavDiv bg={navBgColor} loc="bottom">
-					<BoxNav bg="lightgray" {...Box.style({ marginRight: 1 })}>
-						<button onClick={this.onNewPassword}>
-							New Password
+					<input
+						type="password"
+						placeholder=""
+						value={this.state.term}
+						onChange={this.updateTerm}
+					/>
+					<div>
+						<button
+							onClick={e =>
+								this.setState({ length: this.state.length - 1 })
+							}
+						>
+							-
 						</button>
-					</BoxNav>
-				</Box.NavDiv>
+						{` ${this.state.length} `}
+						<button
+							onClick={e =>
+								this.setState({ length: this.state.length + 1 })
+							}
+						>
+							+
+						</button>
+					</div>
+				</form>
 
-				{this.state.password.length > 0 && (
-					<Box
-						bg="#fff"
-						{...Box.float('24rem', '100%', 'none', '10px auto')}
-					>
-						<Box
-							bg="silver"
-							{...Box.style({
-								textAlign: 'center',
-								border: 'none',
-								fontSize: '1.5rem',
-								fontFamily,
-							})}
-							data={this.state.password}
-						/>
-					</Box>
-				)}
-			</div>
+				<div className={classSlide}>
+					<PasswordList>{this.state.password}</PasswordList>
+				</div>
+			</>
 		);
 	}
 }
