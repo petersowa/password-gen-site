@@ -66,30 +66,32 @@ export class AppPWGen extends Component {
 			'Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace';
 		const classSlide = this.state.showList ? 'fade-in' : 'fade-out';
 		return (
-			<div>
-				<button onClick={this.onNewPassword}>New Passwords</button>
-				<section>
-					<button
-						onClick={e =>
-							this.setState({ length: this.state.length - 1 })
-						}
-					>
-						-
-					</button>
-					{` ${this.state.length} `}
-					<button
-						onClick={e =>
-							this.setState({ length: this.state.length + 1 })
-						}
-					>
-						+
-					</button>
-				</section>
+			<>
+				<div className="control-group">
+					<button onClick={this.onNewPassword}>New Passwords</button>
+					<div>
+						<button
+							onClick={e =>
+								this.setState({ length: this.state.length - 1 })
+							}
+						>
+							-
+						</button>
+						{` ${this.state.length} `}
+						<button
+							onClick={e =>
+								this.setState({ length: this.state.length + 1 })
+							}
+						>
+							+
+						</button>
+					</div>
+				</div>
 
 				<div className={classSlide}>
 					<PasswordList>{this.state.password}</PasswordList>
 				</div>
-			</div>
+			</>
 		);
 	}
 }
