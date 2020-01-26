@@ -15,23 +15,25 @@ class AppRoutes extends Component {
 			<Router>
 				<div className="app__container">
 					<header className="app__header">
-						<h1>App Title</h1>
+						<NavLink class="app__title app__nav-link" to="/">
+							<h1>App Title</h1>
+						</NavLink>
 						<nav class="app__header__nav">
-							<NavLink className="route-link" exact to="/">
+							<NavLink
+								className="app__nav-link"
+								exact
+								to="/genpw"
+							>
 								Gen PW
 							</NavLink>
-							<NavLink className="route-link" to="/hashpw">
+							<NavLink className="app__nav-link" to="/hashpw">
 								Gen Hash PW
-							</NavLink>
-							<NavLink className="route-link" to="/test">
-								Test
 							</NavLink>
 						</nav>
 					</header>
 					<main className="app__main">
-						<Route exact path="/" component={AppPWGen} />
+						<Route exact path="/genpw" component={AppPWGen} />
 						<Route exact path="/hashpw" component={AppHashPW} />
-						<Route path="/test" component={AppTest} />
 					</main>
 				</div>
 			</Router>
