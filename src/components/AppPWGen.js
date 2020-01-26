@@ -7,7 +7,9 @@ const PasswordList = props => {
 	return (
 		<ul className="app__password-list">
 			{props.children.map(pw => (
-				<li className="app__password-list__item">{pw}</li>
+				<li key={pw} className="app__password-list__item">
+					{pw}
+				</li>
 			))}
 		</ul>
 	);
@@ -61,9 +63,6 @@ export class AppPWGen extends Component {
 	};
 
 	render() {
-		const navBgColor = 'hsla(50,0%,64%,.5)';
-		const fontFamily =
-			'Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace';
 		const classSlide = this.state.showList ? 'fade-in' : 'fade-out';
 		return (
 			<>
@@ -72,7 +71,9 @@ export class AppPWGen extends Component {
 					<div>
 						<button
 							onClick={e =>
-								this.setState({ length: this.state.length - 1 })
+								this.setState(prevState => ({
+									length: prevState.length - 1,
+								}))
 							}
 						>
 							-
@@ -80,7 +81,9 @@ export class AppPWGen extends Component {
 						{` ${this.state.length} `}
 						<button
 							onClick={e =>
-								this.setState({ length: this.state.length + 1 })
+								this.setState(prevState => ({
+									length: prevState.length + 1,
+								}))
 							}
 						>
 							+

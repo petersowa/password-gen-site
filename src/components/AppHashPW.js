@@ -3,7 +3,7 @@ import '../style.css';
 import { EFFwords } from '../words.js';
 
 const PasswordList = props => {
-	console.log(props);
+	// console.log(props);
 	return (
 		<ul className="app__password-list">
 			{props.children.map(pw => (
@@ -59,13 +59,14 @@ export class AppHashPW extends Component {
 					count: this.state.count + 1,
 					showList: true,
 				});
-				console.log(pw);
+				// console.log(pw);
 			});
 	};
 
 	onNewPassword = evt => {
 		evt.preventDefault();
 		this.makePassword(this.state.term);
+		this.setState({ term: '' });
 	};
 
 	updateTerm = evt => {
@@ -90,7 +91,9 @@ export class AppHashPW extends Component {
 					<div>
 						<button
 							onClick={e =>
-								this.setState({ length: this.state.length - 1 })
+								this.setState(prevState => ({
+									length: prevState.length - 1,
+								}))
 							}
 						>
 							-
@@ -98,7 +101,9 @@ export class AppHashPW extends Component {
 						{` ${this.state.length} `}
 						<button
 							onClick={e =>
-								this.setState({ length: this.state.length + 1 })
+								this.setState(prevState => ({
+									length: prevState.length + 1,
+								}))
 							}
 						>
 							+
