@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import { AppPWGen } from './AppPWGen.js';
 import { AppHashPW } from './AppHashPW.js';
-import AppTest from './AppTest.js';
 
 class AppRoutes extends Component {
 	componentDidMount() {
@@ -15,10 +14,10 @@ class AppRoutes extends Component {
 			<Router>
 				<div className="app__container">
 					<header className="app__header">
-						<NavLink class="app__title app__nav-link" to="/">
+						<NavLink className="app__title app__nav-link" to="/">
 							<h1>App Title</h1>
 						</NavLink>
-						<nav class="app__header__nav">
+						<nav className="app__header__nav">
 							<NavLink
 								className="app__nav-link"
 								exact
