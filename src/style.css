@@ -39,6 +39,13 @@ p {
 	font-family: Lato;
 }
 
+button {
+	font-size: inherit;
+}
+input {
+	font-size: inherit;
+}
+
 :root {
 	--clr-link: hsl(120, 85%, 63%);
 	--clr-header: hsl(210, 85%, 63%);
