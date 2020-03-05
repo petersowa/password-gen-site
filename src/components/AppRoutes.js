@@ -15,7 +15,7 @@ class AppRoutes extends Component {
 				<div className="app__container">
 					<header className="app__header">
 						<NavLink className="app__title app__nav-link" to="/">
-							<h1>App Title</h1>
+							<h1>PW Helper</h1>
 						</NavLink>
 						<nav className="app__header__nav">
 							<NavLink
