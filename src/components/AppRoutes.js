@@ -11,8 +11,8 @@ class AppRoutes extends Component {
 
 	render() {
 		return (
-			<Router>
-				<div className="app__container">
+			<>
+				<Router>
 					<header className="app__header">
 						<NavLink className="app__title app__nav-link" to="/">
 							<h1>PW Helper</h1>
@@ -30,12 +30,13 @@ class AppRoutes extends Component {
 							</NavLink>
 						</nav>
 					</header>
-					<main className="app__main">
+
+					<main className="app__container app__main">
 						<Route exact path="/genpw" component={AppPWGen} />
 						<Route exact path="/hashpw" component={AppHashPW} />
 					</main>
-				</div>
-			</Router>
+				</Router>
+			</>
 		);
 	}
 }

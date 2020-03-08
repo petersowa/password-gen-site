@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Martel|Merriweather&display=swap');
+
 html {
 	box-sizing: border-box;
 	font-size: calc(0.8em + 1vw);
+	font-family: 'Roboto', 'OpenSans', 'Segoe UI', Tahoma, Geneva, Verdana,
+		sans-serif;
 }
 
 *,
@@ -24,6 +28,15 @@ ul {
 	font-weight: normal;
 }
 
+h1 {
+	font-family: 'Merriweather';
+	font-weight: 800;
+	font-size: 1.3rem;
+	text-transform: uppercase;
+	/* letter-spacing: 0rem; */
+	margin-left: 0.2rem;
+}
+
 ol,
 ul {
 	list-style: none;
@@ -34,22 +47,35 @@ img {
 	height: auto;
 }
 
-h1,
-p {
-	font-family: Lato;
+button {
+	font-family: inherit;
+	font-size: inherit;
+	cursor: pointer;
+	text-transform: capitalize;
+	padding: 0 5px;
+	border: none;
+	border-radius: 5px;
+	outline: none;
 }
 
-button {
-	font-size: inherit;
+button:focus,
+button:active {
+	border: 0;
+	outline: 0;
 }
+
 input {
 	font-size: inherit;
+	border: 0;
+	padding: 0.1rem 0.2rem;
+	background-color: rgb(255, 199, 125);
+	border-radius: 5px;
 }
 
 :root {
 	--clr-link: hsl(120, 85%, 63%);
 	--clr-header: hsl(210, 85%, 63%);
-	--shadow-normal: 2px 2px 5px 2px rgba(0, 0, 0, 0.4);
+	--shadow-normal: 2px 2px 8px 2px rgba(0, 0, 0, 0.2);
 	--shadow-active: 4px 4px 10px 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -85,7 +111,7 @@ button.box {
 	margin: auto;
 	box-sizing: border-box;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	border-radius: 3px;
+	border-radius: 5px;
 }
 
 div.clear {
@@ -93,7 +119,7 @@ div.clear {
 }
 
 .box:hover {
-	/* filter: saturate(100%) brightness(110%); */
+	filter: saturate(100%) brightness(0.7);
 }
 
 .box-nav {
@@ -162,7 +188,7 @@ div.float {
 	background-color: var(--clr-header);
 	padding: 0.1em;
 	box-shadow: var(--shadow-normal);
-	margin-bottom: 0.4em;
+	margin-bottom: 0.2em;
 	height: fit-content;
 	width: 100%;
 }
@@ -178,32 +204,26 @@ div.float {
 	text-overflow: ellipsis;
 	text-decoration: none;
 	/* filter: saturate(20%); */
-	box-shadow: var(--shadow-normal);
+	/* box-shadow: var(--shadow-normal); */
 	overflow: hidden;
 	justify-content: center;
 	align-items: center;
-	border-radius: 100px;
+	border-radius: 5px;
 	border: 2px solid rgba(0, 0, 0, 0);
-}
-
-.app__nav-link.active {
-	/* filter: saturate(100%); */
-	border: 2px solid blue;
-	box-shadow: var(--shadow-active);
-	background-color: lightsalmon;
 }
 
 .app__title {
-	border: 2px solid rgba(0, 0, 0, 0);
-}
-
-.app__title.active {
-	border: 2px solid white;
+	/* border: 2px solid rgba(0, 0, 0, 0); */
+	font-size: 1rem;
+	color: hsl(49, 70%, 60%);
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
 }
 
 *:focus {
-	border: 2px solid rgba(95, 142, 243, 0.74) !important;
-	outline: none;
+	/* border: 2px solid rgba(95, 142, 243, 0.74) !important; */
+	box-shadow: 0 0 2px 2px burlywood;
 }
 
 *:focus-within {
@@ -219,9 +239,8 @@ div.float {
 	max-width: 30em;
 	margin: auto;
 	min-height: calc(100vh - 6.4em);
-	box-shadow: var(--shadow-normal);
+	/* box-shadow: var(--shadow-normal); */
 	padding: 0.5em 0.5em;
-	border-radius: 8px;
 }
 
 .app__header__nav {
@@ -230,13 +249,12 @@ div.float {
 }
 
 .app__password-list {
-	width: 80%;
+	width: 100%;
 	text-align: center;
 	box-shadow: var(--shadow-normal);
-	margin: 1em auto;
+	margin: 0em auto;
 	font-family: Consolas, Monaco, 'Lucida Console', 'Liberation Mono',
 		'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace;
-	border-radius: 8px;
 	padding: 0.5rem;
 }
 
@@ -249,11 +267,12 @@ div.float {
 }
 
 .control-group {
-	background: lightsteelblue;
+	/* background: lightsteelblue; */
 	padding: 0.5em;
 	display: flex;
 	justify-content: space-between;
-	border-radius: 4px;
+	box-shadow: var(--shadow-normal);
+	margin-bottom: 0.5em;
 }
 
 @media (max-width: 500px) {
